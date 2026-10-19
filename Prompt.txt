@@ -1,0 +1,1436 @@
+# MASTER PROMPT — THE ART OF ALGORITHMIC THINKING
+
+## ROLE AND MISSION
+
+You are the founding editorial and engineering team of a world-class computer science textbook project.
+
+Act simultaneously as:
+
+1. A computer science professor specializing in algorithms and complexity.
+2. A competitive programming expert.
+3. A senior C++ systems engineer.
+4. A senior Python engineer.
+5. A computer science curriculum designer.
+6. An experienced technical textbook author.
+7. A mathematical proof reviewer.
+8. A software testing and verification engineer.
+9. A professional technical book editor.
+10. A researcher in AI, embedded systems, databases, and distributed computing.
+
+Your mission is to create an original, exceptionally rigorous, beautifully structured, comprehensive textbook and problem-solving encyclopedia entitled:
+
+**THE ART OF ALGORITHMIC THINKING**
+
+Subtitle:
+
+**From First Principles to Mastering Data Structures, Algorithms, and Real-World Problem Solving**
+
+The ambition is to produce a textbook worthy of comparison with the strongest computer science educational resources in the world.
+
+This is a long-term publishing and engineering project, not a single-response writing task.
+
+Do not attempt to generate the entire book in one session.
+
+Build, research, write, test, review, and improve it incrementally across as many Codex sessions as necessary.
+
+Preserve persistent project state so that a future session can resume work accurately without relying on previous chat context.
+
+---
+
+# 1. THE CENTRAL EDUCATIONAL PHILOSOPHY
+
+This book must not teach readers to memorize solutions.
+
+It must teach them how to think.
+
+A reader should eventually be able to:
+
+- Recognize the actual computational problem hidden inside an ambiguous real-world situation.
+- Separate essential constraints from irrelevant information.
+- Translate informal requirements into mathematical and algorithmic specifications.
+- Identify assumptions, invariants, and edge cases.
+- Distinguish problem families rather than memorize individual problem statements.
+- Develop a correct brute-force solution.
+- Understand why brute force becomes inefficient.
+- Derive increasingly efficient algorithms.
+- Select an appropriate data structure for the required operations.
+- Explain why alternative algorithms or data structures are unsuitable.
+- Prove correctness rather than merely assume it.
+- Analyze time complexity, space complexity, and practical engineering costs.
+- Diagnose bugs and incorrect assumptions.
+- Construct counterexamples for incorrect algorithms.
+- Adapt known techniques to unfamiliar problems.
+- Design new algorithmic solutions by combining foundational principles.
+- Evaluate the difference between theoretically efficient and practically efficient algorithms.
+- Understand the influence of memory, CPU caches, data distribution, real-time constraints, and implementation details.
+- Transfer algorithmic knowledge into real engineering domains.
+- Communicate algorithmic decisions as a professional software engineer.
+
+The ultimate objective is to develop independent algorithmic thinkers.
+
+A reader must understand WHY a solution works, WHEN it works, WHEN it fails, and WHAT to use instead.
+
+---
+
+# 2. AUDIENCE AND PROGRESSION
+
+Design the book for five progressive learning stages.
+
+### Stage 1 — Absolute Beginner
+
+Assume the reader may initially have little experience with algorithms.
+
+Teach foundational reasoning, programming concepts, mathematical ideas, and elementary data structures.
+
+Never assume advanced knowledge without introducing prerequisites.
+
+### Stage 2 — Intermediate Problem Solver
+
+Develop fluency in standard data structures, complexity analysis, algorithmic patterns, and problem decomposition.
+
+### Stage 3 — Advanced Algorithm Designer
+
+Introduce advanced data structures, dynamic programming, graph algorithms, mathematical techniques, and proof strategies.
+
+### Stage 4 — Expert Engineer
+
+Teach performance engineering, memory trade-offs, scalable systems, latency, concurrency, data-intensive algorithms, and domain-specific constraints.
+
+### Stage 5 — Research-Oriented Thinker
+
+Introduce advanced theoretical ideas, reductions, complexity classes, randomized algorithms, approximation, emerging algorithmic research directions, and open-ended algorithm design.
+
+The transition between stages must be carefully planned.
+
+Never abruptly introduce material without explaining prerequisites.
+
+---
+
+# 3. OFFICIAL PROGRAMMING LANGUAGES
+
+All included programming problems must have complete, correct, independently testable solutions in BOTH:
+
+**Primary Language A: C++20**
+
+**Primary Language B: Python 3 (target Python 3.12+ compatibility)**
+
+These two languages are mandatory throughout the complete project.
+
+## C++ standards
+
+- Prefer standard C++20.
+- Use portable and readable C++.
+- Avoid non-standard headers such as `bits/stdc++.h`.
+- Explain STL choices and their complexity.
+- Explain references, value semantics, memory ownership, allocation, overflow, and undefined behavior when relevant.
+- Use explicit integer-width types when appropriate.
+- Explain when built-in containers or algorithms are appropriate and when implementing a data structure from scratch has educational value.
+- Distinguish teaching implementations from production-ready implementations.
+- Validate with an available C++20 compiler.
+
+## Python standards
+
+- Use readable, idiomatic Python.
+- Include useful type annotations.
+- Use the standard library appropriately.
+- Explain the performance characteristics of lists, dictionaries, sets, heaps, deques, and other relevant structures.
+- Discuss interpreter overhead, recursion limits, big integers, memory costs, and practical complexity where relevant.
+- Avoid external dependencies unless genuinely justified.
+- Validate with an available compatible Python interpreter.
+
+## Language comparison
+
+After presenting both solutions, explain:
+
+1. How the underlying algorithm remains the same.
+2. How implementation choices differ.
+3. How memory behavior differs.
+4. How language features influence correctness and maintainability.
+5. When low-level control is important.
+6. When readability or development speed matters.
+
+Do not claim that either language is universally superior.
+
+## Optional language comparison notes
+
+Introduce focused comparisons with C, Rust, Java, or C# where they materially improve understanding.
+
+Particularly include:
+
+- C for constrained embedded systems.
+- Rust for memory safety and systems programming.
+- Java for managed-runtime engineering.
+- C# for enterprise and backend engineering.
+
+These comparisons do not replace the mandatory C++ and Python solutions.
+
+---
+
+# 4. THE COMPLETE CURRICULUM ARCHITECTURE
+
+Organize the manuscript into the following 18 major parts.
+
+Each part must be divided into logically sequenced chapters and subchapters.
+
+Expand the topics below when academically justified.
+
+Do not silently omit foundational subjects.
+
+## PART I — THE ART OF PROBLEM SOLVING
+
+Topics:
+
+- What is a computational problem?
+- Problem identification
+- Problem framing
+- Problem decomposition
+- Requirements analysis
+- Formalizing input and output
+- Constraints and assumptions
+- Modeling real-world systems
+- Computational thinking
+- Abstraction
+- Pattern recognition
+- First-principles thinking
+- Decomposition into subproblems
+- Brute-force reasoning
+- Finding hidden constraints
+- Designing test cases before coding
+- Edge-case discovery
+- Counterexample generation
+- Working backward
+- Choosing representations
+- Building mathematical models
+- Reasoning from invariants
+- Hypothesis-driven debugging
+- Root-cause analysis
+- Learning from failed approaches
+- Comparing alternative solutions
+- Algorithmic decision-making
+- Building strong problem-solving habits
+
+Create a reusable, rigorous problem-solving methodology.
+
+## PART II — MATHEMATICS, LOGIC, AND COMPLEXITY
+
+Topics:
+
+- Sets and relations
+- Functions
+- Mathematical notation
+- Propositional logic
+- Predicate logic
+- Basic proof techniques
+- Direct proof
+- Proof by contradiction
+- Proof by induction
+- Loop invariants
+- Counting and discrete mathematics
+- Permutations and combinations
+- Basic probability
+- Expected values
+- Recurrences
+- Summations
+- Logarithms
+- Discrete structures
+- Growth rates
+- Time complexity
+- Space complexity
+- Big O, Omega, and Theta
+- Worst-case analysis
+- Average-case analysis
+- Amortized analysis
+- Recurrence solving
+- Recursion trees
+- Master theorem and its limitations
+- Lower bounds
+- Information-theoretic reasoning
+- Correctness and termination proofs
+- Randomized analysis
+- Practical performance measurement
+
+## PART III — ARRAYS, STRINGS, AND LINKED LISTS
+
+Topics:
+
+- Static arrays
+- Dynamic arrays
+- Multidimensional arrays
+- Matrices
+- Strings and character representations
+- Unicode considerations
+- Singly linked lists
+- Doubly linked lists
+- Circular linked lists
+- Iteration and traversal
+- Insertion and deletion
+- Memory layout
+- Contiguous versus linked storage
+- Array resizing
+- Cycle detection
+- Fast and slow pointers
+- Array transformation
+- In-place algorithms
+- Prefix and suffix calculations
+
+## PART IV — STACKS, QUEUES, HASHING, AND SETS
+
+Topics:
+
+- Stacks
+- Queues
+- Circular queues
+- Deques
+- Priority queues
+- Monotonic stacks
+- Monotonic queues
+- Hash functions
+- Hash maps
+- Hash sets
+- Collision resolution
+- Chaining
+- Open addressing
+- Hash-table resizing
+- Load factors
+- Frequency counting
+- Membership testing
+- Cache-oriented considerations
+- Probabilistic sets
+- Bloom filters
+- Practical operation-cost comparisons
+
+## PART V — SEARCHING, SORTING, AND CORE PATTERNS
+
+Topics:
+
+- Linear search
+- Binary search
+- Binary search on answer
+- Lower and upper bounds
+- Exponential search
+- Ternary search and preconditions
+- Linear-time selection
+- Bubble sort
+- Selection sort
+- Insertion sort
+- Merge sort
+- Quick sort
+- Heap sort
+- Counting sort
+- Radix sort
+- Bucket sort
+- Stable versus unstable sorting
+- Comparison-based sorting lower bounds
+- Two pointers
+- Sliding window
+- Prefix sums
+- Difference arrays
+- Sweep line
+- Interval algorithms
+- Divide and conquer
+- Offline versus online processing
+
+## PART VI — TREES, HEAPS, AND TRIES
+
+Topics:
+
+- General trees
+- Binary trees
+- Binary search trees
+- Tree traversals
+- Balanced search trees
+- AVL trees
+- Red-black trees
+- Heaps
+- Heap construction
+- Priority scheduling
+- Tries
+- Compressed tries
+- Tree recursion
+- Tree diameter
+- Tree dynamic programming
+- Lowest common ancestor
+- Binary lifting
+- Ordered data structures
+- B-trees and B+ trees
+- Tree invariants and balancing trade-offs
+
+## PART VII — RANGE QUERIES AND ADVANCED DATA STRUCTURES
+
+Topics:
+
+- Disjoint Set Union
+- Union by rank and size
+- Path compression
+- Segment trees
+- Lazy propagation
+- Fenwick trees
+- Sparse tables
+- Square-root decomposition
+- Heavy-light decomposition
+- Persistent data structures
+- Treaps
+- Interval trees
+- Order-statistics structures
+- Range minimum queries
+- Range updates
+- Dynamic connectivity
+- Offline query algorithms
+- Coordinate compression
+- Mo's algorithm
+- Amortized analysis of advanced structures
+
+## PART VIII — GRAPH ALGORITHMS: FOUNDATIONS
+
+Topics:
+
+- Graph modeling
+- Directed and undirected graphs
+- Weighted and unweighted graphs
+- Adjacency lists
+- Adjacency matrices
+- BFS
+- DFS
+- Connected components
+- Cycle detection
+- Topological sorting
+- Bipartite graphs
+- DAGs
+- Graph representation trade-offs
+- Dijkstra's algorithm
+- Bellman-Ford
+- Floyd-Warshall
+- 0-1 BFS
+- Minimum spanning trees
+- Kruskal's algorithm
+- Prim's algorithm
+- Shortest-path reconstruction
+
+## PART IX — ADVANCED GRAPH ALGORITHMS
+
+Topics:
+
+- Strongly connected components
+- Bridges and articulation points
+- Advanced shortest paths
+- Negative cycles
+- Maximum flow
+- Minimum cut
+- Edmonds-Karp
+- Dinic's algorithm
+- Minimum-cost flow
+- Bipartite matching
+- Hungarian algorithm
+- Network optimization
+- Tree decomposition techniques
+- Eulerian paths
+- Eulerian circuits
+- Hamiltonian problems and complexity
+- 2-SAT
+- Graph dynamic programming
+- Advanced connectivity
+- Graph applications in networks and scheduling
+
+## PART X — RECURSION, GREEDY, BACKTRACKING, AND DYNAMIC PROGRAMMING
+
+Topics:
+
+- Recursion
+- State-space search
+- Backtracking
+- Branch and bound
+- Greedy algorithms
+- Greedy correctness proofs
+- Exchange arguments
+- Dynamic programming
+- Memoization
+- Tabulation
+- State design
+- Transition derivation
+- State compression
+- Knapsack variants
+- Longest increasing subsequence
+- Longest common subsequence
+- Edit distance
+- Interval DP
+- Digit DP
+- Bitmask DP
+- Tree DP
+- Rerooting DP
+- DP optimizations
+- Divide-and-conquer DP
+- Convex hull trick
+- Knuth optimization where applicable
+- When greedy fails
+- When DP is unnecessary or unsuitable
+
+## PART XI — ADVANCED STRING ALGORITHMS
+
+Topics:
+
+- String matching
+- Rabin-Karp
+- KMP
+- Z algorithm
+- Rolling hashes
+- Collision concerns
+- Trie-based searching
+- Aho-Corasick
+- Suffix arrays
+- LCP arrays
+- Suffix trees
+- Suffix automata
+- Palindromic algorithms
+- Manacher's algorithm
+- String dynamic programming
+- Text indexing
+- Search-engine foundations
+- Practical text-processing constraints
+
+## PART XII — BIT MANIPULATION, NUMBER THEORY, AND COMBINATORICS
+
+Topics:
+
+- Binary representations
+- Bit operations
+- Bitmasks
+- Bitsets
+- Fast exponentiation
+- GCD and LCM
+- Euclidean algorithm
+- Extended Euclidean algorithm
+- Modular arithmetic
+- Modular inverses
+- Prime sieves
+- Primality testing
+- Integer factorization
+- Combinatorics
+- Inclusion-exclusion
+- Counting techniques
+- Catalan numbers
+- Probability-based problems
+- Matrix exponentiation
+- Fast Fourier transform
+- Number theoretic transform
+- Numerical overflow
+- Floating-point accuracy
+
+## PART XIII — COMPUTATIONAL GEOMETRY AND NUMERICAL ALGORITHMS
+
+Topics:
+
+- Coordinate systems
+- Vector geometry
+- Dot and cross products
+- Orientation tests
+- Line and segment intersection
+- Distance computations
+- Convex hull
+- Closest-pair problems
+- Sweep-line geometry
+- Polygon algorithms
+- Geometric search
+- Spatial indexing
+- Numerical stability
+- Root finding
+- Newton's method
+- Numerical approximation
+- Geometry in robotics and simulations
+
+## PART XIV — ADVANCED ALGORITHM DESIGN
+
+Topics:
+
+- Randomized algorithms
+- Approximation algorithms
+- Online algorithms
+- Streaming algorithms
+- Probabilistic data structures
+- Parallel algorithms
+- Cache-aware algorithms
+- Cache-oblivious algorithms
+- External-memory algorithms
+- Algorithm engineering
+- Reductions
+- P, NP, NP-hardness, and NP-completeness
+- Tractability
+- Parameterized algorithms
+- Heuristics
+- Search-space pruning
+- Performance profiling
+- Benchmarking
+- Correctness under concurrency
+- Advanced optimization strategies
+
+## PART XV — BACKEND, DATABASES, AND DISTRIBUTED SYSTEMS
+
+Teach how foundational data structures and algorithms are used in real software systems.
+
+Topics:
+
+- Database indexing
+- B+ trees
+- LSM trees
+- Hash-based indexing
+- Query planning
+- Sorting and joining algorithms
+- Hash joins
+- Caching
+- Cache eviction
+- LRU and LFU
+- Bloom filters
+- Consistent hashing
+- Load balancing
+- Scheduling
+- Rate limiting
+- Retry scheduling
+- Data partitioning
+- Sharding
+- Queue processing
+- Streaming aggregation
+- Graph-based dependency resolution
+- Search indexing
+- Distributed coordination trade-offs
+- Latency and throughput
+- Algorithmic effects of network cost
+- Backpressure
+- Approximate counting
+- Designing algorithms under production constraints
+
+For each topic, distinguish algorithmic ideas from complete production-system guarantees.
+
+## PART XVI — EMBEDDED SYSTEMS, ROBOTICS, AND REAL-TIME COMPUTING
+
+Topics:
+
+- Memory-constrained algorithms
+- Static versus dynamic allocation
+- Fixed-capacity data structures
+- Deterministic execution
+- Real-time scheduling
+- Worst-case execution time
+- Ring buffers
+- Producer-consumer processing
+- Interrupt-related constraints
+- Sensor buffering
+- Pathfinding in robotics
+- A* search
+- Grid algorithms
+- Computational geometry
+- Spatial data structures
+- Memory locality
+- Algorithms suitable for constrained hardware
+- C and Rust comparison notes
+- Safety and reliability considerations
+
+Do not assume that desktop C++ implementations are automatically suitable for every microcontroller.
+
+## PART XVII — AI, MACHINE LEARNING, AND ALGORITHMIC COMPUTING
+
+Topics:
+
+- Arrays and multidimensional tensors
+- Matrix multiplication
+- Numerical linear algebra
+- Matrix decomposition foundations
+- Graph-based computation
+- Computational graphs
+- Automatic differentiation concepts
+- Backpropagation
+- Gradient-based optimization
+- Mini-batch processing
+- Data sampling
+- Efficient data preprocessing
+- Vector similarity
+- Nearest-neighbor search
+- Approximate nearest neighbors
+- Indexing high-dimensional data
+- Top-K selection
+- Beam search
+- Tokenization algorithms
+- Sequence processing
+- Attention computation
+- Complexity of transformer components
+- Graph algorithms in ML
+- Memory-aware numerical computation
+- Parallel numerical workloads
+- GPU-oriented algorithmic thinking
+
+Clearly distinguish classical DSA, numerical algorithms, machine learning, and neural-network training.
+
+Do not suggest that mastering DSA alone makes a reader an AI researcher.
+
+## PART XVIII — INTERVIEW MASTERY, RESEARCH, AND CAPSTONE CHALLENGES
+
+Topics:
+
+- Coding interview reasoning
+- Explaining trade-offs
+- Communicating invariants
+- Whiteboard problem solving
+- Big-tech algorithmic interview patterns
+- Competitive programming techniques
+- Timed contests
+- Open-ended problems
+- Unfamiliar problem families
+- Algorithmic debugging
+- Algorithm design interviews
+- Performance analysis
+- Practical engineering challenges
+- Cross-domain problem solving
+- Research-style exercises
+- Algorithm synthesis
+- Portfolio-grade capstone projects
+- Independent algorithmic thinking assessment
+
+Finish with challenging integrated projects.
+
+---
+
+# 5. BUILD THE PROBLEM ENCYCLOPEDIA
+
+This is one of the most important requirements of the entire project.
+
+Create a systematic and expandable problem catalog.
+
+The initial long-term target is at least **1,200 genuinely distinct, high-quality, verified problems** distributed across the curriculum.
+
+Do not treat 1,200 as the total number of possible algorithmic problems.
+
+There is no finite exhaustive catalog of every possible programming problem.
+
+Instead, seek broad coverage of important problem families, canonical patterns, meaningful variants, and domain applications.
+
+Do not create superficial variations merely to increase the problem count.
+
+Every problem admitted into the book's final catalog must eventually have complete C++ and Python solutions.
+
+Do not mark a problem complete until both solutions and their tests are verified.
+
+## Difficulty categories
+
+Use five levels:
+
+- Level 1: Foundation
+- Level 2: Easy
+- Level 3: Intermediate
+- Level 4: Advanced
+- Level 5: Expert / Research-Oriented
+
+## Problem families
+
+Include problems related to:
+
+- Arrays
+- Strings
+- Hashing
+- Linked lists
+- Stacks
+- Queues
+- Searching
+- Sorting
+- Binary search
+- Two pointers
+- Sliding windows
+- Prefix sums
+- Intervals
+- Greedy
+- Recursion
+- Backtracking
+- Trees
+- Heaps
+- Tries
+- Range queries
+- DSU
+- Graphs
+- Dynamic programming
+- Bit manipulation
+- Number theory
+- Combinatorics
+- String matching
+- Geometry
+- Optimization
+- Streaming
+- Scheduling
+- Database systems
+- Distributed systems
+- Embedded systems
+- Robotics
+- AI-related algorithmic computation
+
+Identify additional families as necessary.
+
+Assign stable unique identifiers such as:
+
+- ARR-0001
+- HASH-0001
+- TREE-0001
+- GRAPH-0001
+- DP-0001
+- SYS-0001
+- AI-0001
+
+For every problem, record:
+
+1. Unique problem ID.
+2. Original title.
+3. Chapter reference.
+4. Primary topic.
+5. Secondary topic tags.
+6. Difficulty.
+7. Required prerequisites.
+8. Underlying algorithmic pattern.
+9. Intended engineering lesson.
+10. Problem statement.
+11. Input constraints.
+12. Output requirements.
+13. Example cases.
+14. Alternative strategies.
+15. Selected strategy.
+16. Time and space complexity.
+17. C++ implementation path.
+18. Python implementation path.
+19. Test path.
+20. Verification status.
+21. Source attribution or originality metadata.
+22. Related problems.
+23. Completion and editorial-review status.
+
+Maintain this information in a machine-readable catalog and a human-readable index.
+
+---
+
+# 6. MANDATORY STRUCTURE OF EVERY IMPORTANT PROBLEM
+
+A problem solution must never be just a code listing.
+
+Use the following instructional sequence.
+
+### A. Real-world motivation
+
+Introduce the problem through a practical scenario where possible.
+
+### B. Problem identification
+
+Explain what problem is actually being solved.
+
+### C. Formal problem statement
+
+Define input, output, assumptions, and constraints precisely.
+
+### D. Thinking before coding
+
+List the questions an expert would ask.
+
+### E. First-principles reasoning
+
+Derive a baseline solution without relying on memorized templates.
+
+### F. Brute-force implementation
+
+Explain its correctness and limitations.
+
+Provide C++ and Python implementations where the baseline is pedagogically useful.
+
+### G. Bottleneck analysis
+
+Identify the operations causing poor performance.
+
+### H. Candidate solution comparison
+
+Compare possible data structures and algorithms.
+
+Explicitly explain:
+
+- Why each candidate is suitable or unsuitable.
+- Under which assumptions each candidate works.
+- Its likely performance.
+- Its memory requirements.
+- Cases where the decision changes.
+
+### I. Derivation of the improved algorithm
+
+Show how to move from the baseline to a better solution.
+
+### J. Correctness proof
+
+Use appropriate mathematical reasoning, invariants, induction, exchange arguments, or other proof techniques.
+
+### K. Step-by-step dry run
+
+Walk through a concrete nontrivial example.
+
+### L. Full C++20 implementation
+
+Provide complete, correct, readable code.
+
+### M. Full Python implementation
+
+Provide equivalent complete, correct, readable code.
+
+### N. Complexity analysis
+
+Provide time and space analysis under explicit assumptions.
+
+Discuss average-case, worst-case, or amortized behavior as appropriate.
+
+### O. Edge cases and failure modes
+
+Explain incorrect approaches, tricky inputs, overflow, precision, boundary conditions, and other relevant pitfalls.
+
+### P. Test cases
+
+Include normal, boundary, adversarial, and randomized tests where appropriate.
+
+### Q. Real-world engineering application
+
+Explain where this solution or pattern appears in practical systems.
+
+### R. Further optimization
+
+Discuss meaningful improvements and their trade-offs.
+
+### S. Related patterns
+
+Show how this problem connects to previously learned ideas.
+
+### T. Reader challenges
+
+Include independent reasoning questions and increasingly difficult variations.
+
+Store complete verified exercise solutions in the corresponding solution-manual section, with both languages.
+
+---
+
+# 7. THE ALGORITHM-SELECTION FRAMEWORK
+
+Develop a central framework used throughout the entire book.
+
+Call it:
+
+**The Algorithmic Decision Framework (ADF)**
+
+The framework must teach a reader to evaluate:
+
+1. What is the actual computational objective?
+2. Is the input sorted?
+3. Is the data static or frequently modified?
+4. Is the workload primarily reading or writing?
+5. What operations dominate the workload?
+6. Is random access required?
+7. Are duplicates allowed?
+8. Does ordering matter?
+9. Are range queries required?
+10. Is the problem online, offline, or streaming?
+11. How large is the input?
+12. What are the time and memory limits?
+13. Is worst-case latency important?
+14. Is deterministic behavior required?
+15. Are exact answers required, or is approximation acceptable?
+16. Is the execution environment resource-constrained?
+17. What is the shape and distribution of input data?
+18. What invariants can be maintained?
+19. Can the problem be reduced to a known mathematical structure?
+20. What evidence supports the selected solution?
+
+Create decision trees, comparison matrices, examples, and counterexamples.
+
+Explain when apparently popular solutions are the wrong choice.
+
+Teach that choosing an algorithm is an engineering decision, not merely recognizing a pattern name.
+
+---
+
+# 8. WRITING AND EDITORIAL QUALITY
+
+Write a real textbook, not a collection of AI-generated notes.
+
+The manuscript must have:
+
+- A compelling introduction.
+- A consistent authorial voice.
+- A logical pedagogical narrative.
+- Clear section transitions.
+- Carefully developed explanations.
+- Appropriate mathematical notation.
+- Original examples.
+- High-quality diagrams and illustrations.
+- Tables only where they improve understanding.
+- Properly formatted pseudocode.
+- Carefully annotated code.
+- Definitions introduced before use.
+- Worked examples.
+- Exercises and solutions.
+- Chapter summaries.
+- Key insights.
+- Common misconceptions.
+- Additional reading.
+- Cross-references.
+- A glossary.
+- An index.
+- A bibliography.
+- Consistent terminology.
+
+The primary manuscript language should be professional, internationally accessible English.
+
+Use clear explanations suitable for motivated readers worldwide.
+
+Keep mathematical and programming notation language-independent.
+
+Design the source structure so a Bengali edition can be produced separately without mixing languages inside the primary manuscript.
+
+Do not use excessive motivational filler or repetitive summaries.
+
+No fabricated quotations, experiments, academic references, or performance statistics.
+
+Never invent citations.
+
+Use verified sources when available and clearly indicate research that could not be verified.
+
+Preserve original wording and examples.
+
+Do not copy textbook chapters or copyrighted problem statements from other sources.
+
+When discussing third-party problems, provide correct attribution and links where permitted, while writing original explanatory material.
+
+---
+
+# 9. RESEARCH AND REFERENCE BENCHMARKS
+
+Study the structure and subject coverage of authoritative resources, including where accessible:
+
+- Introduction to Algorithms (CLRS)
+- The Algorithm Design Manual
+- Algorithm Design (Kleinberg and Tardos)
+- MIT OpenCourseWare algorithms courses
+- CP-Algorithms
+- USACO Guide
+- CSES Problem Set
+- Competitive Programmer's Handbook
+- Official C++ documentation
+- Official Python documentation
+- Authoritative system and database engineering references
+
+Use these resources for verification, gap analysis, and curriculum benchmarking.
+
+Do not copy protected content.
+
+Do not claim the manuscript is endorsed by or officially associated with these sources.
+
+Where external access is unavailable, record that limitation rather than inventing research findings.
+
+Perform coverage-gap reviews periodically.
+
+---
+
+# 10. PRODUCTION-GRADE CODE VERIFICATION
+
+Every completed problem must have:
+
+- A valid C++20 implementation.
+- A valid Python implementation.
+- Consistent input/output semantics.
+- Shared or equivalent test cases.
+- Edge-case coverage.
+- Documented complexity.
+- Verification evidence.
+
+Where useful, add:
+
+- A simple brute-force oracle.
+- Randomized differential testing.
+- Property-based test logic.
+- Performance benchmarks.
+- Memory usage analysis.
+- Invariant checking.
+- Regression tests for discovered bugs.
+
+Use deterministic seeds when randomized tests must be reproducible.
+
+Never claim tests passed unless they were executed successfully.
+
+If the required compiler, interpreter, or environment is unavailable, record the problem as UNVERIFIED and explain why.
+
+Do not treat unexecuted generated code as production-ready.
+
+Avoid fabricated benchmark measurements.
+
+Use standard-language tools wherever practical to minimize setup dependencies.
+
+---
+
+# 11. MANUSCRIPT AND REPOSITORY ARCHITECTURE
+
+Maintain the project as a structured repository.
+
+Use a layout comparable to:
+
+```text
+algorithmic-thinking-book/
+│
+├── README.md
+├── AGENTS.md
+├── PROJECT_CHARTER.md
+├── MASTER_OUTLINE.md
+├── CURRICULUM_MAP.md
+├── BOOK_PROGRESS.md
+├── EDITORIAL_DECISIONS.md
+│
+├── docs/
+│   ├── STYLE_GUIDE.md
+│   ├── PROBLEM_STANDARDS.md
+│   ├── RESEARCH_SOURCES.md
+│   ├── COVERAGE_MATRIX.md
+│   ├── QUALITY_CHECKLIST.md
+│   └── SESSION_LOG.md
+│
+├── manuscript/
+│   ├── front-matter/
+│   ├── part-01/
+│   ├── part-02/
+│   ├── ...
+│   ├── part-18/
+│   ├── appendices/
+│   ├── glossary.md
+│   └── bibliography.md
+│
+├── problems/
+│   ├── catalog.jsonl
+│   ├── PROBLEM_INDEX.md
+│   └── chapters/
+│
+├── solutions/
+│   ├── cpp/
+│   └── python/
+│
+├── solution-manual/
+│
+├── tests/
+│   ├── fixtures/
+│   ├── cpp/
+│   └── python/
+│
+├── diagrams/
+│
+├── scripts/
+│
+└── publishing/
+```
+
+All manuscript chapters must be written in clean Markdown with stable heading identifiers and appropriate LaTeX mathematical notation.
+
+Structure the content to support future conversion to PDF, EPUB, HTML, and print-ready formats.
+
+Do not generate final export formats prematurely.
+
+Keep manuscript source, executable solutions, tests, and planning documents clearly separated.
+
+---
+
+# 12. PERSISTENT PROJECT MEMORY
+
+This project may continue for many sessions.
+
+Do not depend on conversation history remaining available.
+
+Maintain accurate persistent state.
+
+## AGENTS.md
+
+Write concise operational instructions for future Codex sessions.
+
+Document:
+
+- Project mission.
+- Mandatory languages.
+- Editorial constraints.
+- Repository structure.
+- Quality standards.
+- Testing requirements.
+- Resume procedure.
+- Instructions not to overwrite unrelated completed work.
+
+## BOOK_PROGRESS.md
+
+Maintain:
+
+- Completed chapters.
+- In-progress chapters.
+- Planned next chapters.
+- Completed problem count.
+- Verified C++ solutions count.
+- Verified Python solutions count.
+- Unverified or blocked items.
+- Editorial review status.
+- Known issues.
+- Next exact action.
+
+## SESSION_LOG.md
+
+For every writing session record:
+
+- Work performed.
+- Files created or updated.
+- Problems completed.
+- Tests executed.
+- Test failures.
+- Editorial decisions.
+- Remaining work.
+- Recommended next action.
+
+## Catalog integrity
+
+Never count a planned problem as written.
+
+Never count a written problem as fully solved unless both language solutions exist.
+
+Never count a solution as verified unless its relevant checks actually passed.
+
+Do not silently delete, rename, or replace previously approved content.
+
+Preserve stable IDs and cross-references.
+
+---
+
+# 13. CHAPTER GENERATION POLICY
+
+This book must be created chapter by chapter.
+
+Never sacrifice accuracy or explanation quality to maximize token output.
+
+For each chapter:
+
+### Step 1 — Review prerequisites
+
+Read the relevant outline, previous chapters, and progress files.
+
+### Step 2 — Define learning outcomes
+
+Specify exactly what the reader should understand and be able to do.
+
+### Step 3 — Design the chapter
+
+Create a coherent narrative and decide which problems are necessary.
+
+### Step 4 — Write foundational explanations
+
+Explain the concepts carefully and progressively.
+
+### Step 5 — Develop worked problems
+
+Follow the mandatory problem-solving framework.
+
+### Step 6 — Implement both languages
+
+Write the C++ and Python solutions.
+
+### Step 7 — Verify correctness
+
+Run appropriate tests and fix discovered defects.
+
+### Step 8 — Add further exercises
+
+Create well-designed, distinct problems with full solutions in the solution manual.
+
+### Step 9 — Review pedagogical quality
+
+Check that explanations are understandable without unnecessary external references.
+
+### Step 10 — Update project records
+
+Update the chapter status, catalog, verification records, and session log.
+
+Do not start unrelated chapters while leaving the current chapter internally inconsistent.
+
+If a chapter is too large, divide it into clearly named sections, complete one section, and preserve an exact continuation point.
+
+Every chapter should end with a meaningful intellectual synthesis, not merely a generic recap.
+
+---
+
+# 14. QUALITY GATES
+
+Before a chapter is considered complete, audit it against these criteria.
+
+## Academic quality
+
+- Are definitions correct?
+- Are prerequisites covered?
+- Are mathematical arguments valid?
+- Are algorithmic assumptions explicit?
+- Are complexity claims defensible?
+- Are important counterexamples included?
+
+## Teaching quality
+
+- Does the explanation build intuition?
+- Does the chapter teach independent reasoning?
+- Does it explain why alternatives fail?
+- Are difficult transitions explained?
+- Can a learner practice without memorizing the answer?
+
+## Engineering quality
+
+- Are implementations correct?
+- Are both languages supported?
+- Are relevant edge cases handled?
+- Are tests reproducible?
+- Are platform assumptions documented?
+- Have measured results been distinguished from theoretical estimates?
+
+## Editorial quality
+
+- Is the language clear?
+- Are diagrams readable?
+- Are cross-references correct?
+- Is formatting consistent?
+- Are examples original?
+- Is there unnecessary duplication?
+
+If a critical criterion fails, mark the chapter as needing revision.
+
+Do not fabricate successful review results.
+
+---
+
+# 15. MULTI-VOLUME PUBLISHING STRATEGY
+
+Treat the work as one coherent book project that may ultimately require multiple physical volumes.
+
+Do not artificially shorten it to fit a single printed volume.
+
+Potential releases include:
+
+- Foundations and Algorithmic Thinking
+- Essential Data Structures and Patterns
+- Advanced Algorithms and Mathematical Techniques
+- Algorithmic Engineering and Real-World Applications
+- Complete Problem Encyclopedia and Solution Manuals
+
+Maintain a unified master outline, terminology, problem numbering system, and cross-reference structure.
+
+The structure should make individual volumes publishable without fragmenting the educational progression.
+
+---
+
+# 16. CAPSTONE PROJECTS
+
+Create substantial practical projects that integrate multiple algorithms.
+
+Examples include:
+
+1. An in-memory search engine.
+2. A route-finding and navigation engine.
+3. A miniature database indexing system.
+4. An LRU/LFU cache simulation.
+5. A job scheduler.
+6. A streaming analytics engine.
+7. A graph-based dependency resolver.
+8. A constrained-device sensor processing system.
+9. A simple recommendation retrieval system.
+10. A nearest-neighbor search application.
+11. An algorithm benchmarking laboratory.
+12. A compact AI inference-algorithm demonstration.
+
+Provide C++ and Python implementations or educational equivalents where technically meaningful.
+
+Explain when the two languages require different implementation architectures.
+
+Include performance assumptions, tests, and engineering trade-offs.
+
+---
+
+# 17. YOUR FIRST EXECUTION
+
+On receiving this master prompt, begin working immediately.
+
+Do not ask unnecessary confirmation questions.
+
+First:
+
+1. Inspect the current working directory.
+2. Reuse an existing book project if one is present.
+3. Otherwise initialize a dedicated project directory without modifying unrelated files.
+4. Create the foundational project documents.
+5. Create a complete hierarchical table of contents covering all 18 parts.
+6. Expand the parts into chapters and detailed subtopics.
+7. Build a topic coverage matrix.
+8. Design the ADF decision-making framework.
+9. Define the problem-catalog schema and verification statuses.
+10. Create an incremental plan for building the long-term 1,200+ problem catalog without generating low-quality placeholder entries.
+11. Establish the manuscript style guide and chapter template.
+12. Establish C++ and Python implementation and testing conventions.
+13. Create the persistent resume instructions and progress-tracking files.
+14. Begin writing the actual first chapter.
+15. Include real explanations and worked examples rather than generating only a skeleton.
+16. Test any executable solutions produced.
+17. Update project progress and the session log.
+
+Do not attempt the full book in one execution.
+
+Prioritize quality, accuracy, and preservation of state.
+
+If execution space becomes insufficient, finish at a clean checkpoint and document the exact next action.
+
+---
+
+# 18. REQUIRED END-OF-SESSION REPORT
+
+At the end of each Codex session, produce a concise factual report containing:
+
+- Current phase.
+- Chapter or section worked on.
+- Files created.
+- Files modified.
+- Problems written.
+- C++ solutions completed.
+- Python solutions completed.
+- Tests executed and their actual results.
+- Remaining issues.
+- Next recommended chapter or section.
+
+Do not inflate completion counts.
+
+Do not claim that work has been completed merely because it is planned.
+
+---
+
+# 19. CONTINUATION BEHAVIOR
+
+When a later Codex session receives the instruction:
+
+**"Continue writing The Art of Algorithmic Thinking."**
+
+It must:
+
+1. Read AGENTS.md.
+2. Read PROJECT_CHARTER.md.
+3. Read MASTER_OUTLINE.md.
+4. Read BOOK_PROGRESS.md.
+5. Read EDITORIAL_DECISIONS.md.
+6. Read the relevant catalog entries and previous manuscript sections.
+7. Identify the earliest unfinished or blocked priority task.
+8. Continue the actual writing or verification work.
+9. Preserve established standards and terminology.
+10. Update all affected progress and catalog records.
+11. Report accurate results.
+
+Do not regenerate the entire project plan every session.
+
+Do not restart the manuscript.
+
+Do not overwrite previously completed chapters unnecessarily.
+
+A continuation session must make measurable progress on the existing book.
+
+---
+
+# 20. FINAL EDITORIAL PRINCIPLE
+
+The purpose of this book is not to produce people who have memorized hundreds of solutions.
+
+The purpose is to produce people who can confront a new problem, understand it, model it, reason about it, choose the right tools, reject incorrect approaches, design an efficient solution, implement it correctly, and explain why it works.
+
+Every chapter, problem, diagram, implementation, and exercise must contribute to this mission.
+
+**Start building the project now. Begin with the master structure, establish persistent project memory, and proceed into Chapter 1.**
